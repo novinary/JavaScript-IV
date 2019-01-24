@@ -7,8 +7,9 @@ Prototype Refactor
 2. Your goal is to refactor all of this code to use ES6 Classes. The console.log() statements should still return what is expected of them.
 
 */
+
 // GameObject
-/*
+/*   ** solution from yesterday ** 
 function GameObject (attributes){
   this.createdAt = attributes.createdAt;
   this.dimensions = attributes.dimensions;
@@ -29,7 +30,9 @@ class GameObject {
     }
 };
 
-/*
+
+/* CharacterStats
+** solution from yesterday ** 
 function CharacterStats (charAttributes){
     GameObject.call(this, charAttributes);
     this.healthPoints = charAttributes.healthPoints;
@@ -40,8 +43,22 @@ CharacterStats.prototype.takeDamage = function ()
 {
   return (`${this.name} took damage.`);
 }
-/*
+*/
+//subclass of GameObject class and it uses the extends keyword to set itself as a subclass
+class CharacterStats extends GameObject {
+    constructor (charAttributes)
+    {
+        super(charAttributes)    //super keyword used as a function which calls the parent class with the paramater passed to this class
+        this.healthPoints = charAttributes.healthPoints;
+        this.name = charAttributes.name;
+    }
+    takeDamage() {
+        return (`${this.name} took damage.`);
+    }
+};
+
   
+/*
 function Humanoid(humAtrributes){
   GameObject.call(this, humAtrributes);
   CharacterStats.call(this, humAtrributes);
@@ -53,10 +70,6 @@ Humanoid.prototype = Object.create(CharacterStats.prototype);
 Humanoid.prototype.greet = function (){
   return (`${this.name} offers a greeting in ${this.language}.`);
 }
-/*
-  * Inheritance chain: GameObject -> CharacterStats -> Humanoid
-  * Instances of Humanoid should have all of the same properties as CharacterStats and GameObject.
-  * Instances of CharacterStats should have all of the same properties as GameObject.
 */
 
 // Test you work by un-commenting these 3 objects and the list of console logs below:
