@@ -36,10 +36,10 @@ class Student extends Person {
         this.previousBackground = stuInfo.previousBackground;
         this.className = stuInfo.previousBackground;
         this.favSubjects = stuInfo.favSubjects;
-        this.grade = props.grade;
+        this.grade = stuInfo.grade;
     }
     //methods
-    listSubjects(){
+    listsSubjects(){
         return `${this.favSubjects}`;
     }
     PRAssignment(subject){
@@ -114,4 +114,74 @@ const fred = new Instructor({
  console.log(sonia);
  console.log(sonia.speak()); 
  console.log(sonia.demo('Stored Procedures')); 
- console.log(sonia.grade('Harry', 'Transfiguration')); 
+ console.log(sonia.grade('Ash', 'Data Functions')); 
+
+
+ //Student
+ const Ash = new Student({
+    name: 'Ash Townley',
+    age: 25,
+    location: 'Basingstoke',
+    gender: 'male',
+    previousBackground: 'Student',
+    className: '123',
+    favSubjects: [
+        'Maths',
+        'Chemistry', 
+    ],
+    grade: 75,
+});
+
+const Ralph = new Student({
+    name: 'Ralph Kinnard',
+    age: 25,
+    location: 'Southampton',
+    gender: 'male',
+    previousBackground: 'Student',
+    className: '123',
+    favSubjects: [
+        'IT',
+        'History', 
+    ],
+    grade: 80,
+});
+
+console.log(Ralph);
+console.log(Ralph.speak()); 
+console.log(Ralph.listsSubjects()); 
+console.log(Ralph.PRAssignment('Javascript I')); 
+console.log(Ralph.sprintChallenge('Javascript I')); 
+console.log(Ralph.grade); 
+
+
+//Project Managers
+const Samar = new ProjectManager({
+    name: 'Samar',
+    age: 30,
+    location: 'India',
+    gender: 'male',
+    specialty: 'Javascript',
+    favLanguage: 'English',
+    catchPhrase: 'Rock n roll',
+    gradClassName: '123',
+    favInstructor: 'Gabe',
+});
+
+const Luke = new ProjectManager({
+    name: 'Luke',
+    age: 30,
+    location: 'Poland',
+    gender: 'male',
+    specialty: 'CSS',
+    favLanguage: 'English',
+    catchPhrase: 'Pardy time',
+    gradClassName: '123',
+    favInstructor: 'Gabe',
+});
+
+console.log(Samar);
+console.log(Samar.speak()); 
+console.log(Luke.demo('Functions')); 
+console.log(Samar.grade(Ralph, 'Sprocs')); 
+console.log(Luke.standUp('WEBEU1_LUKE')); 
+console.log(Samar.debugsCode(Ash, 'VSCode')); 
