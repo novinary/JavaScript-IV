@@ -47,3 +47,22 @@ class Student extends Person {
         return `${this.naame} has begin the sprint challenge on ${subject}.`;
     }
 }
+
+//sub class - PM
+class ProjectManager extends Instructor {
+    constructor(pmInfo)
+    {
+        super(pmInfo);
+        this.gradeClassName = pmInfo.gradeClassName;
+        this.favInstrutor = pmInfo.favInstrutor;
+        this.channel = pmInfo.channel;
+    }
+    //methods
+    standUp(channel){
+        return `${this.name} announces to ${channel}, @channel standy times!`;
+    }
+    debugsCode(student, subject) {
+        return `${this.name} debugs ${student}'s code on ${subject}.`;
+    }
+}
+
