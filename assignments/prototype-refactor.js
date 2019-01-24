@@ -151,7 +151,6 @@ class Humanoid extends CharacterStats {
   // * Give the Hero and Villains different methods that could be used to remove health points from objects which could result in destruction if health gets to 0 or drops below 0;
   // * Create two new objects, one a villain and one a hero and fight it out with methods!
 /*
-  //Villain
   function Villain(vilAttributes){
     GameObject.call(this, vilAttributes);
     CharacterStats.call(this, vilAttributes);
@@ -181,8 +180,15 @@ class Humanoid extends CharacterStats {
     ],
     language: ' Ghukliak',
   });
-
-  //Hero
+  */
+ //Villan
+ /*class Vilain extends Humanoid {
+     constructor(vilAttributes){
+         super(vilAttributes);
+         this.
+     }
+ }*/
+  /*
   function Hero(vilAttributes){
     GameObject.call(this, vilAttributes);
     CharacterStats.call(this, vilAttributes);
@@ -218,5 +224,4 @@ console.log(human.giveDamage(goblin));
 console.log(goblin.serveDamage(human));
 console.log(human.giveDamage(goblin)); 
 console.log(goblin.serveDamage(human));
-
 */
